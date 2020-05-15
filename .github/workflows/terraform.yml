@@ -17,7 +17,7 @@ jobs:
         with:
           # Private version of https://github.com/actions/hello-world-docker-action
           repository: cloudpilots-dev/tf-action-replace
-          ref: refs/tags/v2
+          ref: refs/tags/v3
           token: ${{ secrets.GIT_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT to clone that private repo
       - name: Run replace action
         uses: ./
