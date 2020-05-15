@@ -52,11 +52,9 @@ jobs:
         uses: hashicorp/setup-terraform@v1
 
       - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@master
+        uses: cloudpilots-dev/tf-action-replace@v1
         with:
-          find: 'domain'
-          replace: ${{secrets.TF_VAR_domain}}
-          include: 'terraform.tf'
+          who-to-greet: 'Louis'
 
       - name: Find and Replace
         run: git status

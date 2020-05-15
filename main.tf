@@ -3,15 +3,6 @@
  *
  */
 
-# https://git.cloudpilots.com/customers/veroo/tf/tf-environments-template
-# https://www.terraform.io/docs/providers/github/r/actions_secret.html
-# https://www.terraform.io/docs/configuration/variables.html#environment-variables
-# https://juliankleine@github.com:orgs/cloudpilots-dev/teams/iac-team/repositories
-
-
-# https://www.terraform.io/docs/modules/sources.html#github
-# https://www.terraform.io/docs/modules/sources.html#generic-git-repository
-
 # dev environment
 module "env-dev" {
   source          = "git::https://github.com/cloudpilots-dev/tf-module-environment"
