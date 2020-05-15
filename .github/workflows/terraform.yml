@@ -13,14 +13,20 @@ jobs:
 
     # https://github.com/actions/checkout/issues/95
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GIT_TOKEN }}
+          path: repo
       - uses: actions/checkout@v2
         with:
           # Private version of https://github.com/actions/hello-world-docker-action
           repository: cloudpilots-dev/tf-action-replace
-          ref: refs/tags/v4
+          ref: master
           token: ${{ secrets.GIT_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT to clone that private repo
+          path: action
       - name: Run replace action
-        uses: ./
+        uses: ./action
         with:
           domain: ${{ secrets.TF_VAR_domain }}
           git_url: '${{ secrets.GIT_CREDENTIALS }}/cloudpilots-dev/${{ secrets.TF_VAR_domain }}-environments.git'
