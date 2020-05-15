@@ -23,7 +23,7 @@ jobs:
         uses: ./
         with:
           domain: ${{ secrets.TF_VAR_domain }}
-
+          git_url: '${{ secrets.GIT_CREDENTIALS }}/cloudpilots-dev/${{ secrets.TF_VAR_domain }}-environments.git'
   replace2:
     name: 'Replace 2'
     runs-on: ubuntu-latest
