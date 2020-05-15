@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2-beta
+      - uses: actions/checkout@v2
         with:
           # Private version of https://github.com/actions/hello-world-docker-action
           repository: cloudpilots-dev/tf-action-replace
