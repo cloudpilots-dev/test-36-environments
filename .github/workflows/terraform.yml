@@ -7,6 +7,22 @@ on:
   pull_request:
 
 jobs:
+  replace:
+    name: 'Replace'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2-beta
+        with:
+          # Private version of https://github.com/actions/hello-world-docker-action
+          repository: cloudpilots-dev/tf-action-replace
+          ref: refs/tags/v1
+          token: ${{ secrets.GIT_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT to clone that private repo
+      - name: Run the private action
+        uses: ./
+        with:
+          who-to-greet: 'Louis'
+
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
